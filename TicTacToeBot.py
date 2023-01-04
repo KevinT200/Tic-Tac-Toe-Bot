@@ -27,10 +27,9 @@ def startUp():
     try:
         for i in range(3):
             for j in range(3):
-               if board[i][j] != "":
-                    board[i][j].grid_forget()
-                    logic.playAgainButton.grid_forget()
-                    logic.optionsButton.grid_forget()
+                board[i][j].grid_forget()
+                logic.playAgainButton.grid_forget()
+                logic.optionsButton.grid_forget()
     except:
         pass
 
@@ -289,6 +288,11 @@ def restartGame():
     global logic
     global board
     global bot
+    for i in range(3):
+        for j in range(3):
+            board[i][j].grid_forget()
+            logic.playAgainButton.grid_forget()
+            logic.optionsButton.grid_forget()
     logic.playAgainButton.grid_forget()
     logic.optionsButton.grid_forget()
     boardDisplay.topLabel.grid_forget()
